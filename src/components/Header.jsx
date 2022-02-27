@@ -9,15 +9,19 @@ const Header = (props) => {
         alt="youtube-logo"
         className={styles.header__logo}
       />
-      <span>Youtube</span>
+      <span className={styles.header__name}>Youtube</span>
       <form className={styles['search-form']} action="">
         <input
-          className={styles.search__input}
+          className={styles['search-form__input']}
           type="text"
           placeholder="검색"
         />
-        <button className={styles.search__button}>
-          <img className={styles.search__img} src="/images/search.png" alt="" />
+        <button className={styles['search-form__button']}>
+          <img
+            className={styles['search-form__img']}
+            src="/images/search.png"
+            alt=""
+          />
         </button>
       </form>
     </header>
