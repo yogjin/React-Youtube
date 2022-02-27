@@ -5,6 +5,10 @@
   align-items: center;
 }
 
-.header__input {
+.search__input {
   width: 50vw;
+}
+
+.search__img {
+  width: 1.5rem;
 }
