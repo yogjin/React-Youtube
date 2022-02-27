@@ -2,6 +2,8 @@
   --base--space: 0.4rem;
 }
 .header {
+  position: sticky;
+  top: 0;
   display: flex;
   font-size: 2rem;
   color: white;
