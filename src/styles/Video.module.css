@@ -1,0 +1,10 @@
+.video {
+  /* row당 Video 4개씩 */
+  /* Three values: flex-grow | flex-shrink | flex-basis */
+  flex: 1 0 21%;
+  margin: 5px;
+  height: 100px;
+  background-color: gray;
+  display: flex;
+  border: 1px solid;
+}
