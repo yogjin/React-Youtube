@@ -1,8 +1,9 @@
 import React from 'react';
-const searchBarStyle = { display: 'flex' }; // 렌더링 한번만
+import styles from '../styles/SearchBar.module.css';
+
 const SearchBar = (props) => {
   return (
-    <div className="search-bar" style={searchBarStyle}>
+    <div className={styles.search}>
       <img src="/images/logo.png" alt="youtube-logo" className="logo" />
       <span>Youtube</span>
       <form className="search-input" action="">
