@@ -10,6 +10,7 @@ const requestOptions = {
 
 function App() {
   const [videos, setVideos] = useState([]);
+  const [query, setQuery] = useState(''); // 검색 text
 
   useEffect(() => {
     const fetchVideos = () =>
@@ -25,9 +26,17 @@ function App() {
   const onSearch = (videos) => {
     setVideos(videos);
   };
+  const handleQueryChange = (query) => {
+    setQuery(query);
+  };
   return (
     <>
-      <Header videos={videos} />
+      <Header
+        query={query}
+        setVideos={setVideos}
+        setQuery={setQuery}
+        onQueryChange={handleQueryChange}
+      />
       <Videos videos={videos} />
     </>
   );
