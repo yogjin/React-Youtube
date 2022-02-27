@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header';
+import VideoPlayPage from './components/VideoPlayPage';
 import Videos from './components/Videos';
 
 const requestOptions = {
@@ -11,6 +12,7 @@ const requestOptions = {
 function App() {
   const [videos, setVideos] = useState([]);
   const [query, setQuery] = useState(''); // 검색 text
+  const [clickedVideo, setClickedVideo] = useState(''); // 클릭한 video
 
   useEffect(() => {
     const fetchVideos = () =>
@@ -29,6 +31,9 @@ function App() {
   const handleQueryChange = (query) => {
     setQuery(query);
   };
+  const handleVideoClick = (embedHTML) => {
+    setClickedVideo(embedHTML);
+  };
   return (
     <>
       <Header
@@ -37,7 +42,11 @@ function App() {
         setQuery={setQuery}
         onQueryChange={handleQueryChange}
       />
-      <Videos videos={videos} />
+      {clickedVideo ? (
+        <VideoPlayPage video={clickedVideo} />
+      ) : (
+        <Videos videos={videos} handleVideoClick={handleVideoClick} />
+      )}
     </>
   );
 }
