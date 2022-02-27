@@ -9,7 +9,7 @@ const requestOptions = {
 };
 
 function App() {
-  const [list, setList] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     const fetchVideos = () =>
@@ -18,15 +18,17 @@ function App() {
         requestOptions
       )
         .then((response) => response.json())
-        .then((videos) => setList(videos.items))
+        .then((videos) => setVideos(videos.items))
         .catch((error) => console.log('error', error));
     fetchVideos();
   }, []);
-
+  const onSearch = (videos) => {
+    setVideos(videos);
+  };
   return (
     <>
-      <Header />
-      <Videos list={list} />
+      <Header videos={videos} />
+      <Videos videos={videos} />
     </>
   );
 }

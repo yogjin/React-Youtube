@@ -2,10 +2,10 @@ import React from 'react';
 import Video from './Video';
 import styles from '../styles/Videos.module.css';
 
-const Videos = ({ list }) => {
+const Videos = ({ videos }) => {
   return (
     <main className={styles.videos}>
-      {list.map((video) => (
+      {videos.map((video) => (
         <Video key={video.id} snippet={video.snippet} />
       ))}
     </main>
