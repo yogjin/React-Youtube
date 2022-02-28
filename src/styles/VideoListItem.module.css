@@ -1,10 +1,18 @@
 .video {
-  background-color: green;
+  display: flex;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 ​.video__thumbnails {
 }
-
+.video__metadata {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: white;
+  padding-left: 0.5rem;
+}
 .video__title {
 }
 
