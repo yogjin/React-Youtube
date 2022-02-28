@@ -15,6 +15,7 @@ const VideoListItem = ({ videoId, snippet, handleVideoClick }) => {
         className={styles.video__thumbnails}
         src={thumbnails.high.url}
         alt="thumbnails"
+        style={{ width: '100%' }}
       />
       <div className={styles.video__metadata}>
         <span className={styles.video__title}>{title}</span>
