@@ -43,7 +43,7 @@ function App() {
         onQueryChange={handleQueryChange}
       />
       {clickedVideo ? (
-        <VideoPlayPage video={clickedVideo} />
+        <VideoPlayPage videos={videos} video={clickedVideo} />
       ) : (
         <Videos videos={videos} handleVideoClick={handleVideoClick} />
       )}
