@@ -12,13 +12,15 @@ const VideoPlayPage = ({ videos, video, handleVideoClick }) => {
   console.log(video);
   return (
     <main className={styles['video-playpage']}>
-      <div
-        className={styles.video}
-        dangerouslySetInnerHTML={{ __html: embedHtml }}
-      ></div>
-      <div className={styles.metadata}>
-        <span className={styles.metadata__title}>{title}</span>
-        <span className={styles.metadata__channelTitle}>{channelTitle}</span>
+      <div className={styles['video-container']}>
+        <div
+          className={styles.video}
+          dangerouslySetInnerHTML={{ __html: embedHtml }}
+        ></div>
+        <div className={styles.metadata}>
+          <span className={styles.metadata__title}>{title}</span>
+          <span className={styles.metadata__channelTitle}>{channelTitle}</span>
+        </div>
       </div>
       <ul className={styles.list}>
         <VideoList videos={videos} handleVideoClick={handleVideoClick} />

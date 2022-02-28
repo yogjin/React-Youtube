@@ -1,22 +1,7 @@
-.video {
-  /* row당 Video 4개씩 */
-  /* Three values: flex-grow | flex-shrink | flex-basis */
-  flex: 1 0 21%;
-  margin: 0.5rem;
-  height: 25%;
-  background-color: blue;
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid red;
-}
-
-.video__thumbnails {
-  width: 100%;
+​ .video__thumbnails {
 }
 
 .video__title {
-  display: block;
-  color: white;
 }
 
 .video__channelTitle {

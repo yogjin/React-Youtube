@@ -1,10 +1,9 @@
 import React from 'react';
 import VideoListItem from './VideoListItem';
-import styles from '../styles/VideoList.module.css';
 
 const VideoList = ({ videos, handleVideoClick }) => {
   return (
-    <main className={styles.videos}>
+    <>
       {videos.map((video) => (
         <VideoListItem
           key={video.id.videoId ? video.id.videoId : video.id}
@@ -13,7 +12,7 @@ const VideoList = ({ videos, handleVideoClick }) => {
           handleVideoClick={handleVideoClick}
         />
       ))}
-    </main>
+    </>
   );
 };
 
