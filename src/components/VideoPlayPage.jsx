@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/VideoPlayPage.module.css';
+import VideoList from './VideoList';
 
 const requestOptions = {
   method: 'GET',
   redirect: 'follow',
 };
 
-const VideoPlayPage = ({ videos, video }) => {
+const VideoPlayPage = ({ videos, video, handleVideoClick }) => {
   const { videoId, title, description, channelTitle, embedHtml } = video;
   console.log(video);
   return (
@@ -19,7 +20,9 @@ const VideoPlayPage = ({ videos, video }) => {
         <span className={styles.metadata__title}>{title}</span>
         <span className={styles.metadata__channelTitle}>{channelTitle}</span>
       </div>
-      <ul className={styles.list}></ul>
+      <ul className={styles.list}>
+        <VideoList videos={videos} handleVideoClick={handleVideoClick} />
+      </ul>
     </main>
   );
 };
