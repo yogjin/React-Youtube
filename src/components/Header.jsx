@@ -1,7 +1,13 @@
 import React, { useRef } from 'react';
 import styles from '../styles/Header.module.css';
 
-const Header = ({ query, setVideos, setQuery, onQueryChange }) => {
+const Header = ({
+  query,
+  setVideos,
+  setQuery,
+  onQueryChange,
+  setClickedVideo,
+}) => {
   const searchVideos = (e) => {
     e.preventDefault();
     const requestOptions = {
@@ -17,6 +23,7 @@ const Header = ({ query, setVideos, setQuery, onQueryChange }) => {
       .then((videos) => setVideos(videos.items))
       .catch((error) => console.log('error', error));
     setQuery('');
+    setClickedVideo('');
   };
 
   return (

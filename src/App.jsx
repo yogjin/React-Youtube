@@ -55,6 +55,7 @@ function App() {
         setVideos={setVideos}
         setQuery={setQuery}
         onQueryChange={handleQueryChange}
+        setClickedVideo={setClickedVideo}
       />
       {clickedVideo ? (
         <VideoPlayPage
