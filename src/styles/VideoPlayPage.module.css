@@ -3,7 +3,7 @@
   padding: 1.5rem;
 }
 .video-container {
-  flex: 2;
+  flex: 2 0 60%;
 }
 .video {
   position: relative;
@@ -16,5 +16,5 @@
   height: 100%;
 }
 .list {
-  flex: 1;
+  flex: 1 0 20%;
 }
