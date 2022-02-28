@@ -2,6 +2,7 @@
   --base--space: 0.4rem;
 }
 .header {
+  z-index: 1;
   position: sticky;
   top: 0;
   display: flex;
