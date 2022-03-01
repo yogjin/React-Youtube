@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import styles from '../styles/Header.module.css';
+import styles from './Header.module.css';
 
 const Header = ({
   query,

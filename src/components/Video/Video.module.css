@@ -1,7 +1,8 @@
 .video {
   /* row당 Video 4개씩 */
   /* Three values: flex-grow | flex-shrink | flex-basis */
-  flex: 1 0 21%;
+  /* flex: 1 0 21%; */
+  width: 23%;
   margin: 0.5rem;
   height: 25%;
   display: flex;

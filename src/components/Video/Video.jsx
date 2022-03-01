@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/Video.module.css';
+import styles from './Video.module.css';
 
 const Video = ({ videoId, snippet, handleVideoClick }) => {
   const { publishedAt, title, description, thumbnails, channelTitle } = snippet;

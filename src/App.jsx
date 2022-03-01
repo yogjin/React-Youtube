@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import Header from './components/Header';
-import VideoPlayPage from './components/VideoPlayPage';
-import Videos from './components/Videos';
+import Header from './components/Header/Header.jsx';
+import VideoPlayPage from './components/VideoPlayPage/VideoPlayPage.jsx';
+import Videos from './components/Videos/Videos.jsx';
 
 const requestOptions = {
   method: 'GET',
@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     const fetchVideos = () =>
       fetch(
-        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls',
+        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=28&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls',
         requestOptions
       )
         .then((response) => response.json())

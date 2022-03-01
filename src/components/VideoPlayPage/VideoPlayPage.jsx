@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styles from '../styles/VideoPlayPage.module.css';
-import VideoList from './VideoList';
+import styles from './VideoPlayPage.module.css';
+import VideoList from '../VideoList/VideoList.jsx';
 
 const requestOptions = {
   method: 'GET',

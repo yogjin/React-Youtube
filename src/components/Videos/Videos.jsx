@@ -1,6 +1,6 @@
 import React from 'react';
-import Video from './Video';
-import styles from '../styles/Videos.module.css';
+import Video from '../Video/Video.jsx';
+import styles from './Videos.module.css';
 
 const Videos = ({ videos, handleVideoClick }) => {
   return (
