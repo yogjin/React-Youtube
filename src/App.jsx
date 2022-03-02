@@ -23,7 +23,7 @@ function App({ youtube }) {
     // videoInfo = { videoId, title, description, channelTitle }
     setClickedVideo(videoInfo);
   };
-  console.log(clickedVideo);
+
   return (
     <>
       <Header onSearchVideos={onSearchVideos} />
