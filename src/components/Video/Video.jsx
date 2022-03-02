@@ -13,7 +13,7 @@ const Video = ({ videoId, snippet, handleVideoClick }) => {
     >
       <img
         className={styles.video__thumbnails}
-        src={thumbnails.high.url}
+        src={thumbnails.medium.url}
         alt="thumbnails"
       />
       <div className={styles.video__metadata}>
