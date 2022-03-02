@@ -2,11 +2,6 @@ import React, { useEffect } from 'react';
 import styles from './VideoPlayPage.module.css';
 import VideoList from '../VideoList/VideoList.jsx';
 
-const requestOptions = {
-  method: 'GET',
-  redirect: 'follow',
-};
-
 const VideoPlayPage = ({ videos, video, handleVideoClick }) => {
   const { videoId, title, description, channelTitle, embedHtml } = video;
   console.log(video);
