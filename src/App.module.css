@@ -2,7 +2,11 @@
   display: flex;
   background-color: black;
 }
-
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}
 .video-detail {
   flex: 1 1 70%;
 }
