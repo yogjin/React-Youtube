@@ -10,7 +10,6 @@ const VideoDetail = ({ video }) => {
           id="player"
           type="text/html"
           src={`http://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=http://example.com`}
-          frameborder="0"
         ></iframe>
         <div className={styles.metadata}>
           <span className={styles.metadata__title}>{title}</span>
