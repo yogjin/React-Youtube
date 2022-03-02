@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header.jsx';
-import VideoPlayPage from './components/VideoPlayPage/VideoPlayPage.jsx';
+import VideoDetail from './components/VideoDetail/VideoDetail';
 import Videos from './components/Videos/Videos.jsx';
+import styles from './App.module.css';
 
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
@@ -22,18 +23,24 @@ function App({ youtube }) {
     // videoInfo = { videoId, title, description, channelTitle }
     setClickedVideo(videoInfo);
   };
+  console.log(clickedVideo);
   return (
     <>
       <Header onSearchVideos={onSearchVideos} />
-      {clickedVideo ? (
-        <VideoPlayPage
-          videos={videos}
-          video={clickedVideo}
-          handleVideoClick={handleVideoClick}
-        />
-      ) : (
-        <Videos videos={videos} handleVideoClick={handleVideoClick} />
-      )}
+      <main className={styles.content}>
+        {clickedVideo && (
+          <div className={styles['video-detail']}>
+            <VideoDetail video={clickedVideo} />
+          </div>
+        )}
+        <div className={styles['video-list']}>
+          <Videos
+            videos={videos}
+            handleVideoClick={handleVideoClick}
+            display={clickedVideo ? 'list' : 'grid'}
+          />
+        </div>
+      </main>
     </>
   );
 }

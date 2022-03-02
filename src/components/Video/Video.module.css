@@ -1,16 +1,23 @@
-.video {
+/* 검색, 첫화면 비디오 목록*/
+.video.grid {
   /* row당 Video 4개씩 */
   /* Three values: flex-grow | flex-shrink | flex-basis */
   /* flex: 1 0 21%; */
   width: 23%;
   margin: 0.5rem;
   height: 25%;
-  display: flex;
-  flex-wrap: wrap;
   cursor: pointer;
 }
+/* 비디오 재생시 비디오 목록 */
+.video.list {
+  width: 100%;
+  margin: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
 .video:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: transform 300ms;
 }
 

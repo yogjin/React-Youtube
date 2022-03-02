@@ -1,12 +1,13 @@
 import React from 'react';
 import styles from './Video.module.css';
 
-const Video = ({ videoId, snippet, handleVideoClick }) => {
+const Video = ({ videoId, snippet, handleVideoClick, display }) => {
   const { publishedAt, title, description, thumbnails, channelTitle } = snippet;
+  const displayType = display === 'list' ? styles.list : styles.grid;
 
   return (
     <article
-      className={styles.video}
+      className={`${styles.video} ${displayType}`}
       onClick={() =>
         handleVideoClick({ videoId, title, description, channelTitle })
       }
