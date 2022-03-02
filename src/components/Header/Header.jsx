@@ -1,31 +1,7 @@
 import React, { useRef } from 'react';
 import styles from './Header.module.css';
 
-const Header = ({
-  query,
-  setVideos,
-  setQuery,
-  onQueryChange,
-  setClickedVideo,
-}) => {
-  const searchVideos = (e) => {
-    e.preventDefault();
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
-
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((videos) => setVideos(videos.items))
-      .catch((error) => console.log('error', error));
-    setQuery('');
-    setClickedVideo('');
-  };
-
+const Header = ({ query, onQueryChange, onSearchVideos }) => {
   return (
     <header className={styles.header}>
       <img
@@ -37,7 +13,7 @@ const Header = ({
       <form
         className={styles['search-form']}
         action=""
-        onSubmit={(e) => searchVideos(e)}
+        onSubmit={(e) => onSearchVideos(e)}
       >
         <input
           className={styles['search-form__input']}

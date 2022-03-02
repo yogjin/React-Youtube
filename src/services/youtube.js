@@ -20,5 +20,13 @@ export default class Youtube {
   }
 
   // 검색
-  search(query) {}
+  search(query) {
+    return fetch(
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls`,
+      this.requestOptions
+    )
+      .then((response) => response.json())
+      .then((videos) => videos.items)
+      .catch((error) => console.log('error', error));
+  }
 }

@@ -17,8 +17,13 @@ function App({ youtube }) {
   useEffect(() => {
     youtube.mostPopular().then(setVideos);
   }, []);
-  const onSearch = (videos) => {
-    setVideos(videos);
+  const onSearchVideos = (e) => {
+    e.preventDefault();
+    youtube
+      .search(query) //
+      .then(setVideos);
+    setQuery('');
+    setClickedVideo('');
   };
   const handleQueryChange = (query) => {
     setQuery(query);
@@ -43,11 +48,9 @@ function App({ youtube }) {
   return (
     <>
       <Header
-        query={query}
-        setVideos={setVideos}
-        setQuery={setQuery}
+        query={query} //
         onQueryChange={handleQueryChange}
-        setClickedVideo={setClickedVideo}
+        onSearchVideos={onSearchVideos}
       />
       {clickedVideo ? (
         <VideoPlayPage
