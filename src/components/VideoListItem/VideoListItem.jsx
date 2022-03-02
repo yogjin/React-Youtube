@@ -13,7 +13,7 @@ const VideoListItem = ({ videoId, snippet, handleVideoClick }) => {
     >
       <img
         className={styles.video__thumbnails}
-        src={thumbnails.high.url}
+        src={thumbnails.medium.url}
         alt="thumbnails"
         style={{ width: '50%' }}
       />
