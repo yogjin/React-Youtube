@@ -9,21 +9,13 @@ const requestOptions = {
   redirect: 'follow',
 };
 
-function App() {
+function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [query, setQuery] = useState(''); // 검색 text
   const [clickedVideo, setClickedVideo] = useState(false); // 클릭한 video 정보(object)
 
   useEffect(() => {
-    const fetchVideos = () =>
-      fetch(
-        'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=28&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls',
-        requestOptions
-      )
-        .then((response) => response.json())
-        .then((videos) => setVideos(videos.items))
-        .catch((error) => console.log('error', error));
-    fetchVideos();
+    youtube.mostPopular().then(setVideos);
   }, []);
   const onSearch = (videos) => {
     setVideos(videos);

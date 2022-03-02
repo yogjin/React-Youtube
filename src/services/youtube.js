@@ -1,6 +1,6 @@
 // youtube API fetch module
 
-class Youtube {
+export default class Youtube {
   constructor(key) {
     this.key = key;
     this.requestOptions = {
@@ -9,7 +9,15 @@ class Youtube {
     };
   }
   // 첫 화면 인기동영상
-  mostPopular() {}
+  async mostPopular() {
+    return fetch(
+      'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=28&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls',
+      this.requestOptions
+    )
+      .then((response) => response.json())
+      .then((videos) => videos.items)
+      .catch((error) => console.log('error', error));
+  }
 
   // 검색
   search(query) {}
