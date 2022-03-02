@@ -11,7 +11,7 @@ export default class Youtube {
   // 첫 화면 인기동영상
   async mostPopular() {
     return fetch(
-      'https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=28&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls',
+      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=28&key=${this.key}`,
       this.requestOptions
     )
       .then((response) => response.json())
@@ -22,7 +22,7 @@ export default class Youtube {
   // 검색
   search(query) {
     return fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls`,
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${query}&key=${this.key}`,
       this.requestOptions
     )
       .then((response) => response.json())
