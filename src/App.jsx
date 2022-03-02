@@ -4,11 +4,6 @@ import Header from './components/Header/Header.jsx';
 import VideoPlayPage from './components/VideoPlayPage/VideoPlayPage.jsx';
 import Videos from './components/Videos/Videos.jsx';
 
-const requestOptions = {
-  method: 'GET',
-  redirect: 'follow',
-};
-
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
   const [query, setQuery] = useState(''); // 검색 text
