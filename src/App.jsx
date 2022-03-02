@@ -6,22 +6,17 @@ import Videos from './components/Videos/Videos.jsx';
 
 function App({ youtube }) {
   const [videos, setVideos] = useState([]);
-  const [query, setQuery] = useState(''); // 검색 text
   const [clickedVideo, setClickedVideo] = useState(false); // 클릭한 video 정보(object)
 
   useEffect(() => {
     youtube.mostPopular().then(setVideos);
   }, []);
-  const onSearchVideos = (e) => {
+  const onSearchVideos = (e, query) => {
     e.preventDefault();
     youtube
       .search(query) //
       .then(setVideos);
-    setQuery('');
     setClickedVideo('');
-  };
-  const handleQueryChange = (query) => {
-    setQuery(query);
   };
   const handleVideoClick = (videoInfo) => {
     // videoInfo = { videoId, title, description, channelTitle }
@@ -29,11 +24,7 @@ function App({ youtube }) {
   };
   return (
     <>
-      <Header
-        query={query} //
-        onQueryChange={handleQueryChange}
-        onSearchVideos={onSearchVideos}
-      />
+      <Header onSearchVideos={onSearchVideos} />
       {clickedVideo ? (
         <VideoPlayPage
           videos={videos}

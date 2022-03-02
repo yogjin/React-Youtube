@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import styles from './Header.module.css';
 
-const Header = ({ query, onQueryChange, onSearchVideos }) => {
+const Header = ({ onSearchVideos }) => {
+  const inputRef = useRef();
   return (
     <header className={styles.header}>
       <img
@@ -13,14 +14,13 @@ const Header = ({ query, onQueryChange, onSearchVideos }) => {
       <form
         className={styles['search-form']}
         action=""
-        onSubmit={(e) => onSearchVideos(e)}
+        onSubmit={(e) => onSearchVideos(e, inputRef.current.value)}
       >
         <input
           className={styles['search-form__input']}
           type="text"
           placeholder="검색"
-          onChange={(e) => onQueryChange(e.target.value)}
-          value={query}
+          ref={inputRef}
         />
         <button className={styles['search-form__button']}>
           <img
