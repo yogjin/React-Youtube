@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import styles from './Header.module.css';
 
-const Header = ({ onSearchVideos }) => {
+const Header = memo(({ onSearchVideos }) => {
   const inputRef = useRef();
   return (
     <header className={styles.header}>
@@ -32,6 +32,6 @@ const Header = ({ onSearchVideos }) => {
       </form>
     </header>
   );
-};
+});
 
 export default Header;

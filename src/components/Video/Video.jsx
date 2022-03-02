@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styles from './Video.module.css';
 
-const Video = ({ videoId, snippet, handleVideoClick, display }) => {
+const Video = memo(({ videoId, snippet, handleVideoClick, display }) => {
   const { publishedAt, title, description, thumbnails, channelTitle } = snippet;
   const displayType = display === 'list' ? styles.list : styles.grid;
 
@@ -23,6 +23,6 @@ const Video = ({ videoId, snippet, handleVideoClick, display }) => {
       </div>
     </article>
   );
-};
+});
 
 export default Video;

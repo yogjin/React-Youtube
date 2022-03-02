@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header.jsx';
 import VideoDetail from './components/VideoDetail/VideoDetail';
@@ -12,17 +12,19 @@ function App({ youtube }) {
   useEffect(() => {
     youtube.mostPopular().then(setVideos);
   }, []);
-  const onSearchVideos = (e, query) => {
+
+  const onSearchVideos = useCallback((e, query) => {
     e.preventDefault();
     youtube
       .search(query) //
       .then(setVideos);
     setClickedVideo('');
-  };
-  const handleVideoClick = (videoInfo) => {
+  }, []);
+
+  const handleVideoClick = useCallback((videoInfo) => {
     // videoInfo = { videoId, title, description, channelTitle }
     setClickedVideo(videoInfo);
-  };
+  }, []);
 
   return (
     <>
