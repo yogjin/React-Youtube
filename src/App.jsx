@@ -30,20 +30,7 @@ function App({ youtube }) {
   };
   const handleVideoClick = (videoInfo) => {
     // videoInfo = { videoId, title, description, channelTitle }
-    // Get iframe by VideoId
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=player&id=${videoInfo.videoId}&key=AIzaSyBs8Sv9Ix-HQ6pgs1-yhfhBby3TPbjUTls`,
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        videoInfo = {
-          ...videoInfo,
-          embedHtml: result.items[0].player.embedHtml,
-        };
-        setClickedVideo(videoInfo);
-      })
-      .catch((error) => console.log('error', error));
+    setClickedVideo(videoInfo);
   };
   return (
     <>
