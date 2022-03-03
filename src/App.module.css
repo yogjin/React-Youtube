@@ -1,6 +1,7 @@
 .content {
   display: flex;
   background-color: black;
+  overflow: hidden;
 }
 
 .video-detail {
