@@ -1,16 +1,18 @@
 import React, { memo, useRef } from 'react';
 import styles from './Header.module.css';
 
-const Header = memo(({ onSearchVideos }) => {
+const Header = memo(({ onSearchVideos, onClickLogo }) => {
   const inputRef = useRef();
   return (
     <header className={styles.header}>
-      <img
-        src="/images/logo.png"
-        alt="youtube-logo"
-        className={styles.header__logo}
-      />
-      <span className={styles.header__name}>Youtube</span>
+      <div className={styles.header__logoContainer} onClick={onClickLogo}>
+        <img
+          src="/images/logo.png"
+          alt="youtube-logo"
+          className={styles.header__logo}
+        />
+        <span className={styles.header__name}>Youtube</span>
+      </div>
       <form
         className={styles['search-form']}
         action=""

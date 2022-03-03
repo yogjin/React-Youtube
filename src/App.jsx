@@ -13,6 +13,10 @@ function App({ youtube }) {
     youtube.mostPopular().then(setVideos);
   }, []);
 
+  const onClickLogo = () => {
+    setClickedVideo('');
+  };
+
   const onSearchVideos = useCallback((e, query) => {
     e.preventDefault();
     youtube
@@ -28,7 +32,7 @@ function App({ youtube }) {
 
   return (
     <>
-      <Header onSearchVideos={onSearchVideos} />
+      <Header onSearchVideos={onSearchVideos} onClickLogo={onClickLogo} />
       <main className={styles.content}>
         {clickedVideo && (
           <div className={styles['video-detail']}>
