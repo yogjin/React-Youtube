@@ -1,0 +1,47 @@
+/* 검색, 첫화면 비디오 목록*/
+.video.grid {
+  /* row당 Video 4개씩 */
+  /* Three values: flex-grow | flex-shrink | flex-basis */
+  /* flex: 1 0 21%; */
+  width: 23%;
+  margin: 0.5rem;
+  height: 25%;
+  cursor: pointer;
+}
+/* 비디오 재생시 비디오 목록 */
+.video.list {
+  display: flex;
+  width: 100%;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.video:hover {
+  transform: scale(1.02);
+  transition: transform 300ms;
+}
+
+.video__thumbnails.grid {
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+.video__thumbnails.list {
+  width: 35%;
+}
+
+.video__metadata.list {
+  padding-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.video__title {
+  display: block;
+  color: white;
+}
+
+.video__channelTitle {
+  color: gray;
+}

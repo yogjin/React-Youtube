@@ -1,0 +1,46 @@
+:root {
+  --base--space: 0.4rem;
+}
+.header {
+  z-index: 1;
+  position: sticky;
+  top: 0;
+  display: flex;
+  font-size: 2rem;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #222121;
+  padding: var(--base--space);
+}
+.header__logoContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.header__name {
+  padding-left: var(--base--space);
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  padding-left: var(--base--space);
+}
+
+.search-form__input {
+  width: 50vw;
+  height: 1.8rem;
+  font-size: 1rem;
+}
+
+.search-form__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-left: var(--base--space);
+}
+
+.search-form__img {
+  width: 1.6rem;
+}

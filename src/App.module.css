@@ -1,0 +1,23 @@
+.content {
+  display: flex;
+  background-color: black;
+  overflow: hidden;
+}
+
+.video-detail {
+  flex: 1 1 70%;
+}
+
+.video-list {
+  flex: 1 1 30%;
+  padding-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .video-list {
+    padding-top: 0px;
+  }
+}
